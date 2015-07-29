@@ -324,7 +324,7 @@ define('SpriteGenerator', ['RectanglePacking'], function (RectanglePacking) {
 				items[i].drawWidth = items[i].drawImageWidth;
 				items[i].drawHeight = items[i].drawImageHeight;
 			}
-			console.log(items[i].drawWidth);
+			//console.log(items[i].drawWidth);
 			items[i].xOffset = (this.option.padding.left * revRatio) + Math.ceil((items[i].drawWidth - items[i].drawImageWidth) / 2);
 			items[i].yOffset = (this.option.padding.top * revRatio) + Math.ceil((items[i].drawHeight - items[i].drawImageHeight) / 2);
 			items[i].drawWidth += ((this.option.padding.left + this.option.padding.right) * revRatio);
@@ -341,7 +341,7 @@ define('SpriteGenerator', ['RectanglePacking'], function (RectanglePacking) {
 						nowX += items[i].drawWidth;
 						break;
 				}
-				console.log(items[i].drawWidth);
+				//console.log(items[i].drawWidth);
 				maxWidth = Math.max(maxWidth, items[i].x + items[i].drawWidth);
 				maxHeight = Math.max(maxHeight, items[i].y + items[i].drawHeight);
 			}
