@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="dns-prefetch" href="https://html5shiv.googlecode.com">
+	<link rel="dns-prefetch" href="https://code.jquery.com">
+	<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+	<!--[if lt IE 9]>
+	<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/index.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" media="all"/>
+
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+
+	<title>Sprite Image Generator</title>
+</head>
+
+<body>
+
+<h1>Sprite Image Generator</h1>
+
+<div>
+	<ul class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#cSetting" aria-controls="cSetting" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-cog"></i> Setting</a></li>
+		<li role="presentation"><a href="#cValidation" id="cValidationTab" aria-controls="cValidation" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-check"></i> Validation</a></li>
+		<li role="presentation"><a href="#cResult" id="cResultTab" aria-controls="cResult" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-print"></i> Generated CSS</a></li>
+		<li role="presentation"><a href="#cExport" id="cExportTab" aria-controls="cExport" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-export"></i> Export</a></li>
+		<li class="pull-right">
+			<button type="button" id="pImport" class="btn btn-default" data-toggle="modal" data-target=".cImportBox">
+				<i class="glyphicon glyphicon-import"></i> Import
+			</button>
+		</li>
+	</ul>
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="cSetting">
+			<form action="#" id="pGenerate" class="form-horizontal">
+				<fieldset>
+					<div class="row dSetting">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label class="col-sm-3 control-label">레티나 지원</label>
+
+								<div class="col-sm-9">
+									<div class="checkbox"><label><input type="checkbox" id="resample"/> 1/2 사이즈로 CSS 생성</label></div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">고정 사이즈</label>
+
+								<div class="col-sm-9">
+									<div class="checkbox"><label><input type="checkbox" id="fixedSize" data-bind="checked: fixedSize"/> 여백을 사용하여 각 이미지의 크기를 동일하게 유지합니다.</label></div>
+								</div>
+							</div>
+							<div class="form-group" data-bind="visible: fixedSize">
+								<div class="col-sm-offset-3 col-sm-9">
+									<div class="row dSize">
+										<div class="col-xs-5">
+											<div class="input-group">
+												<input type="number" id="pWidth" class="form-control" value=""/>
+												<span class="input-group-addon">px</span>
+											</div>
+										</div>
+										<div class="col-xs-1">
+											<p class="form-control-static text-center">X</p>
+										</div>
+										<div class="col-xs-5">
+											<div class="input-group">
+												<input type="number" id="pHeight" class="form-control" value=""/>
+												<span class="input-group-addon">px</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">여백</label>
+
+								<div class="col-sm-9">
+									<div class="row dPadding">
+										<div class="col-xs-5">
+											<div class="input-group">
+												<span class="input-group-addon">좌우</span>
+												<input type="number" id="pPaddingHor" class="form-control" value=""/>
+												<span class="input-group-addon">px</span>
+											</div>
+										</div>
+										<div class="col-xs-1">
+											<p class="form-control-static text-center">:</p>
+										</div>
+										<div class="col-xs-5">
+											<div class="input-group">
+												<span class="input-group-addon">상하</span>
+												<input type="number" id="pPaddingVer" class="form-control" value=""/>
+												<span class="input-group-addon">px</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">배치</label>
+
+								<div class="col-sm-9 form-inline">
+									<div class="radio">
+										<label><input type="radio" name="layout" value="ver" checked> 세로</label>
+									</div>
+									<div class="radio">
+										<label><input type="radio" name="layout" value="hor"> 가로</label>
+									</div>
+									<div class="radio">
+										<label><input type="radio" name="layout" value="compat"> Compat</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">줄바꿈</label>
+
+								<div class="col-sm-9">
+									<div class="checkbox"><label><input type="checkbox" id="useCr"/> CSS 속성별 줄바꿈</label></div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">ClassName</label>
+
+								<div class="col-sm-9">
+									<div class="row">
+										<div class="col-xs-6">
+											<input type="text" id="pClassName" class="form-control" value="sprite"/>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Prefix Selector</label>
+
+								<div class="col-sm-9">
+									<div class="row">
+										<div class="col-xs-6">
+											<input type="text" id="pPrefix" class="form-control" value=""/>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="col-sm-3 control-label">Filename</label>
+
+								<div class="col-sm-9">
+									<div class="row">
+										<div class="col-xs-6">
+											<input type="text" id="pFileName" class="form-control" value=""/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-3 control-label">DataURL</label>
+
+								<div class="col-sm-9">
+									<div class="checkbox"><label><input type="checkbox" id="useDataUrl" data-bind="checked: useDataUrl"/> 이미지를 DataURL로 출력</label></div>
+								</div>
+							</div>
+							<div class="form-group" data-bind="visible: !useDataUrl()">
+								<label class="col-sm-3 control-label">URL Prefix</label>
+
+								<div class="col-sm-9">
+									<input type="text" id="pUrlPrefix" class="form-control" value=""/>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<input type="file" id="files" class="form-control" multiple="multiple"/>
+								</div>
+								<div class="panel-body dFilesBox">
+									<div class="btn-group" role="group" aria-label="정렬" id="cSort">
+										<button type="button" class="btn btn-default" data-sort-type="size-asc">크기순(asc)</button>
+										<button type="button" class="btn btn-default" data-sort-type="size-desc">크기순(desc)</button>
+										<button type="button" class="btn btn-default" data-sort-type="name-asc">이름순(asc)</button>
+										<button type="button" class="btn btn-default" data-sort-type="name-desc">이름순(desc)</button>
+									</div>
+									<div class="alert alert-warning alert-dismissible" role="alert">
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										파일을 드레그해서 넣으세요.
+									</div>
+									<ol id="cFiles" class="clearfix"></ol>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i> 이미지 / CSS 생성</button>
+				</fieldset>
+			</form>
+
+			<div class="modal fade cImportBox">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+							<h4 class="modal-title">Import (JSON Format)</h4>
+						</div>
+						<div class="modal-body">
+							<textarea id="cImportTextarea"></textarea>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+							<button type="button" class="btn btn-primary" id="pImportOk">확인</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="cResult">
+			<div class="clearfix">
+				<button type="button" class="btn btn-default pull-right cCopy" data-copy-target=".cResultBox"><i class="glyphicon glyphicon-copy"></i> Copy</button>
+			</div>
+			<div class="cResultBox"></div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="cValidation"></div>
+		<div role="tabpanel" class="tab-pane" id="cExport">
+			<div class="clearfix">
+				<button type="button" id="pExportDown" class="btn btn-default pull-right"><i class="glyphicon glyphicon-download-alt"></i> Download</button>
+			</div>
+			<div class="panel panel-default dExportImages">
+				<div class="panel-body">
+					<div class="row">
+						<dl class="col-xs-6">
+							<dt>
+							<h3><span class="pNormalTitle"></span> [Normal]</h3></dt>
+							<dd class="pNormal"></dd>
+						</dl>
+						<dl class="col-xs-6">
+							<dt>
+							<h3><span class="pRetinaTitle"></span> [Retina]</h3></dt>
+							<dd class="pRetina"></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<h3 class="clearfix">
+				<span class="cJsonTitle"></span>
+				<button type="button" class="btn btn-default pull-right cCopy" data-copy-target=".cExportData"><i class="glyphicon glyphicon-copy"></i> Copy</button>
+			</h3>
+			<pre class="cExportData"></pre>
+		</div>
+	</div>
+</div>
+
+<!--
+<footer>
+	<a href="https://github.com/asamaru7/SpriteImageGenerator/zipball/master" class="btn btn-primary">
+		<small>Download</small>
+		.zip file
+	</a>
+	<a href="https://github.com/asamaru7/SpriteImageGenerator/tarball/master" class="btn btn-primary">
+		<small>Download</small>
+		.tar.gz file
+	</a>
+
+	<p class="repo-owner"><a href="https://github.com/asamaru7/SpriteImageGenerator"></a> is maintained by <a href="https://github.com/asamaru7">asamaru7</a>.</p>
+
+	<p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</p>
+</footer>
+-->
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js" data-main="js/index.js"></script>
+</body>
+</html>
