@@ -306,8 +306,9 @@ define('SpriteGenerator', ['RectanglePacking'], function (RectanglePacking) {
 		var ratio = (downsample ? 2 : 1);
 		var revRatio = (!downsample ? 2 : 1);
 		var fixedSize = this.option.fixedSize;
-		var fixedWidth = Math.ceil(this.option.width / ratio);
-		var fixedHeight = Math.ceil(this.option.height / ratio);
+		var retinaOption = (this.option.retina ? 2 : 1);
+		var fixedWidth = Math.ceil(this.option.width * retinaOption / ratio);
+		var fixedHeight = Math.ceil(this.option.height * retinaOption / ratio);
 		var nowX = 0;
 		var nowY = 0;
 		var maxWidth = 0;
@@ -409,8 +410,10 @@ define('SpriteGenerator', ['RectanglePacking'], function (RectanglePacking) {
 	SpriteGenerator.prototype._generateCSS = function (images, canvas, retinaCanvas, includeRetina) {
 		this.resultCSS = {'common': null, 'each': null, 'validation': null};
 
-		var fixedWidth = (this.option.width / (this.option.retina ? 2 : 1));
-		var fixedHeight = (this.option.height / (this.option.retina ? 2 : 1));
+		//var fixedWidth = (this.option.width / (this.option.retina ? 2 : 1));
+		//var fixedHeight = (this.option.height / (this.option.retina ? 2 : 1));
+		var fixedWidth = this.option.width;
+		var fixedHeight = this.option.height;
 		var cr = this.option.useCr ? "\n" : '';
 		var tb = this.option.useCr ? "\t" : ' ';
 
