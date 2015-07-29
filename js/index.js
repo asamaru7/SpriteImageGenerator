@@ -15,7 +15,7 @@
 			'Knockout': 'https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min',
 			'Sortable': 'https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.2.1/Sortable.min',
 			'Masonry': 'https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min',
-			'SpriteGenerator': 'SpriteGenerator',
+			'SpriteGenerator': 'SpriteImageGenerator',
 			'RectanglePacking': 'RectanglePacking',
 			'FileSaver': 'FileSaver.min',
 			'JSZip': 'https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min'
