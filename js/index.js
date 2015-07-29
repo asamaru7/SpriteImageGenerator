@@ -1,12 +1,6 @@
 (function () {
 	"use strict";
 
-	// todo : auto fixed size
-	// 기본값 정리
-	// 입력 항목 정리
-	// prefix, postfix
-	// padding
-	// github 페이지로 추가
 	requirejs.config({
 		'baseUrl': './js/',
 		'waitSeconds': 0,   // infinity
@@ -24,6 +18,8 @@
 	});
 
 	$(function () {
+		$('[data-toggle="tooltip"], .pTooltip').tooltip();
+
 		//if (document.queryCommandSupported('copy')) {
 		$('.cCopy').on('click', function () {
 			console.log($(this).data('copy-target'));
@@ -102,8 +98,8 @@
 		//spriteGenerator.initialize();
 
 		var getRunOption = function () {
-			var paddingHor = parseInt($('#pPaddingHor').val());
-			var paddingVer = parseInt($('#pPaddingVer').val());
+			var paddingHor = parseInt($('#pPaddingHor').val()) || 0;
+			var paddingVer = parseInt($('#pPaddingVer').val()) || 0;
 			return {
 				retina: $('#resample').prop('checked'),
 				useCr: $('#useCr').prop('checked'),
@@ -125,6 +121,7 @@
 			var generatedResult = spriteGenerator.generate(getRunOption());
 			if (generatedResult == null) {
 				e.preventDefault();
+				return false;
 			}
 			var css = generatedResult.css.common + '\n' + generatedResult.css.each;
 			css = css.replace(/\n/g, '<br />').replace(/\t/g, '&nbsp;&nbsp;');
