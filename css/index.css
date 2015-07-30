@@ -43,6 +43,10 @@ h1 { border-bottom:#ccc solid 1px; margin-bottom:20px; padding-bottom:10px; }
 .tab-pane { padding-top:10px; }
 #cImportTextarea { display:block; width:100%; height:300px; box-sizing:border-box; }
 /* -----------------------------------------------
+ * Intro
+ */
+.dIntro { margin-top:30px; }
+/* -----------------------------------------------
  * Setting
  */
 .dSetting { padding:0 15px; }
