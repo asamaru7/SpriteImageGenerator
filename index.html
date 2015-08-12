@@ -346,8 +346,25 @@
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js" data-main="js/index.js"></script>
 
-<!-- http://sharebutton.to/ -->
-<script>var sharebutton_is_horizontal = true; document.write('<script src="//cdn.script.to/share4.js"></scr' + 'ipt>'); document.write("<div style='display: none'>");</script><a href="http://sharebutton.org/">social share button</a><script>document.write("</div>");</script>
+<!-- https://www.shareaholic.com -->
+<script type="text/javascript">
+	//<![CDATA[
+	(function() {
+		var shr = document.createElement('script');
+		shr.setAttribute('data-cfasync', 'false');
+		shr.src = '//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js';
+		shr.type = 'text/javascript'; shr.async = 'true';
+		shr.onload = shr.onreadystatechange = function() {
+			var rs = this.readyState;
+			if (rs && rs != 'complete' && rs != 'loaded') return;
+			var site_id = '7e2eba662f961d2c553b48d545ce8268';
+			try { Shareaholic.init(site_id); } catch (e) {}
+		};
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(shr, s);
+	})();
+	//]]>
+</script>
 
 <script>
 	(function (i, s, o, g, r, a, m) {
