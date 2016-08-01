@@ -75,6 +75,8 @@ h1 { border-bottom:#ccc solid 1px; margin-bottom:20px; padding-bottom:10px; }
 	white-space:nowrap;
 	overflow:hidden;
 }
+#cFiles > li > i { position:absolute; display:none; border:#000 solid 1px; cursor:pointer; font-size:11px; background:#ffffff; opacity:0.8; width:20px; height:20px; line-height:20px; text-align:center; }
+#cFiles > li:hover > i { display:block; }
 #cFiles > li > img { max-width:50px; max-height:50px; margin-right:7px; }
 #cFiles > li > span > i { font-size:11px; color:#999; }
 #cFiles .popover-content { padding:9px 25px; }

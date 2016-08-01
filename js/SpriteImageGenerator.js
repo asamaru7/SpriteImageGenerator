@@ -284,7 +284,10 @@ define('SpriteGenerator', ['RectanglePacking'], function (RectanglePacking) {
 				title += ', ' + humanFileSize(item.fileSize, true);
 			}
 			title += ')</i>';
-			var $item = $('<li/>').append(item.image).append('<span>' + title + '</span>')
+			var $item = $('<li/>')
+				.append('<i>X</i>')
+				.append(item.image)
+				.append('<span>' + title + '</span>')
 				.data('sprite-item', item);
 			$item.find('span > span').on('save', (function ($el) {
 				return function (e, params) {
@@ -293,6 +296,12 @@ define('SpriteGenerator', ['RectanglePacking'], function (RectanglePacking) {
 					$el.data('sprite-item', data);
 				};
 			})($item)).editable();
+			$item.find('> i').on('click', (function ($el) {
+				return function (e, params) {
+					// this.items 에서는 제거하지 않음 : this.items는 this.setting.dropElement가 없을 경우만 사용되므로
+					$el.remove();
+				};
+			})($item));
 			$item.appendTo(this.setting.dropElement);
 			$item = null;
 			title = null;
