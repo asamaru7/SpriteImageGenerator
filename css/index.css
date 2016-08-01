@@ -101,6 +101,7 @@ h1 { border-bottom:#ccc solid 1px; margin-bottom:20px; padding-bottom:10px; }
 #cExport h3 { font-size:16px; }
 #cExport h3 > span { padding-top:10px; display:inline-block; margin-top:5px; }
 #cExport .dExportImages dt { border-bottom:#ccc solid 1px; padding-bottom:5px; margin-bottom:10px; }
+#cExport .dExportImages dd { background:url('../img/bg.png') repeat; }
 #cExport .dExportImages dd > img { max-width:100%; border:#ccc solid 1px; }
 #cExport .cJsonTitle { }
 .cExportData { padding:10px; }
