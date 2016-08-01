@@ -258,6 +258,7 @@ define('SpriteGenerator', ['RectanglePacking'], function (RectanglePacking) {
 	};
 
 	SpriteGenerator.prototype._addImageItem = function (imageData, name, size) {
+		// name + width + height = hash?
 		var image = new Image();
 		image.src = imageData;
 		var item = {
@@ -316,16 +317,16 @@ define('SpriteGenerator', ['RectanglePacking'], function (RectanglePacking) {
 		var revRatio = (!downsample ? 2 : 1);
 		var fixedSize = this.option.fixedSize;
 		var retinaOption = (this.option.retina ? 2 : 1);
-		var fixedWidth = Math.ceil(this.option.width * retinaOption / ratio);
-		var fixedHeight = Math.ceil(this.option.height * retinaOption / ratio);
+		var fixedWidth = Math.floor(this.option.width * retinaOption / ratio);
+		var fixedHeight = Math.floor(this.option.height * retinaOption / ratio);
 		var nowX = 0;
 		var nowY = 0;
 		var maxWidth = 0;
 		var maxHeight = 0;
 		for (var i = 0, iCnt = items.length; i < iCnt; i++) {
 			//console.log(items[i]);
-			items[i].drawImageWidth = Math.ceil(items[i].width / ratio);
-			items[i].drawImageHeight = Math.ceil(items[i].height / ratio);
+			items[i].drawImageWidth = Math.floor(items[i].width / ratio);
+			items[i].drawImageHeight = Math.floor(items[i].height / ratio);
 			if (fixedSize) {
 				items[i].drawWidth = fixedWidth;
 				items[i].drawHeight = fixedHeight;
