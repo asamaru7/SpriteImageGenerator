@@ -272,6 +272,17 @@
 		 * Export 탭
 		 */
 		(function () {
+			$('#pShowBg').on('click', function () {
+				var isShown = ($(this).data('is-show') == 'y');
+				$(this).find('> span').text(isShown ? 'Show Background' : 'Hide Background');
+				$(this).data('is-show', isShown ? 'n' : 'y');
+				if (isShown) {
+					$('#cExport').removeClass('cShowBG');
+				} else {
+					$('#cExport').addClass('cShowBG');
+				}
+			});
+
 			$('#pExportDown').on('click', function () {
 				spriteGenerator.exportToZip(getRunOption());
 			});
