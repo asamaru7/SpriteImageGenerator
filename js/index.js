@@ -69,6 +69,17 @@
 			tmp = null;
 			$items.detach().appendTo($itemBox);
 		});
+
+		$('#pSettingShowBg').on('click', function () {
+			var isShown = ($(this).data('is-show') == 'y');
+			$(this).find('> span').text(isShown ? 'Show Background' : 'Hide Background');
+			$(this).data('is-show', isShown ? 'n' : 'y');
+			if (isShown) {
+				$('#cFiles').removeClass('cShowBG');
+			} else {
+				$('#cFiles').addClass('cShowBG');
+			}
+		});
 	});
 
 	require(['SpriteGenerator'], function (SpriteGenerator) {
