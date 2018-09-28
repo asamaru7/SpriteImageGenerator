@@ -1,54 +1,75 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-	<meta charset='utf-8'>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="keywords" content="sprite css image retina json export import validation drag drop sort" />
-	<meta name="description" content="A CSS Sprite is a load of images lumped together into a single image file. They're used as a technique to make your websites load faster, by decreasing the number of HTTP requests your users have to make. Each request will contain the overhead of HTTP headers (including cookies) and the connection's latency. By using a single image file instead of many, you can dramatically decrease the time it take your pages to load." />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+		<title>Sprite CSS/Image Generator</title>
+	<meta name="author" content="Asamaru">
+	<meta name="keywords" content="sprite,css,image,retina,json,export,import,validation,drag,drop,sort">
+	<meta name="description" content="A CSS Sprite is a load of images lumped together into a single image file. They&#039;re used as a technique to make your websites load faster, by decreasing the number of HTTP requests your users have to make. Each request will contain the overhead of HTTP headers (including cookies) and the connection&#039;s latency. By using a single image file instead of many, you can dramatically decrease the time it take your pages to load. : Sprite CSS/Image Generator">
+	<meta name="referrer" content="always">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" type="image/x-icon" href="https://sprite.asamaru.net/favicon.ico"/>
+	<link rel="canonical" href="https://sprite.asamaru.net/"/>
+		<link href="//www.googletagmanager.com" rel="dns-prefetch"/>	
+		<!--[if lt IE 9]><script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	
 
-	<link rel="dns-prefetch" href="https://html5shiv.googlecode.com">
-	<link rel="dns-prefetch" href="https://code.jquery.com">
-	<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
-	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-	<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
-	<link rel="dns-prefetch" href="//www.google-analytics.com">
+	
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
 
-	<!--[if lt IE 9]>
-	<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+	
+	
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Sprite CSS/Image Generator">
+	<meta property="og:title" content="Sprite CSS/Image Generator">
+	<meta property="og:description" content="A CSS Sprite is a load of images lumped together into a single image file. They&#039;re used as a technique to make your websites load faster, by decreasing the number of HTTP requests your users have to make. Each request will contain the overhead of HTTP headers (including cookies) and the connection&#039;s latency. By using a single image file instead of many, you can dramatically decrease the time it take your pages to load.">
+	<meta property="og:url" content="https://sprite.asamaru.net/"/>
+	<meta property="og:image" content="https://sprite.asamaru.net/res/img/icon/icon.png">
+	
 
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@">
+	<meta name="twitter:title" content="Sprite CSS/Image Generator">
+	<meta name="twitter:description" content="A CSS Sprite is a load of images lumped together into a single image file. They&#039;re used as a technique to make your websites load faster, by decreasing the number of HTTP requests your users have to make. Each request will contain the overhead of HTTP headers (including cookies) and the connection&#039;s latency. By using a single image file instead of many, you can dramatically decrease the time it take your pages to load.">
+	<meta property="twitter:image" content="https://sprite.asamaru.net/res/img/icon/icon.png">
+	
 
-	<link rel="stylesheet" type="text/css" href="css/index.css" media="all"/>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" media="all"/>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" media="all"/>
+										<link rel="apple-touch-icon" sizes="180x180" href="/res/img/icon/180.png">
+												<link rel="apple-touch-icon" sizes="76x76" href="/res/img/icon/76.png">
+												<link rel="apple-touch-icon" sizes="120x120" href="/res/img/icon/120.png">
+												<link rel="apple-touch-icon" sizes="152x152" href="/res/img/icon/152.png">
+						
+	<link rel="alternate" type="application/rss+xml" title="Sprite CSS/Image Generator" href="https://sprite.asamaru.net/atom.xml"/>
 
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+			<link href="/res/css/min/f5c7d50a46a8e41e308addd9e1022766.css" type="text/css" rel="stylesheet" />
 
-	<title>Sprite CSS/Image Generator</title>
-</head>
+	
+			
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-65749108-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
 
+		  gtag('config', 'UA-65749108-1');
+		</script>
+	
+	</head>
 <body>
-
-<h1>Sprite CSS/Image Generator</h1>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Sprite CSS/Image -->
-<ins class="adsbygoogle"
-	 style="display:block"
-	 data-ad-client="ca-pub-8163803188491150"
-	 data-ad-slot="4020537820"
-	 data-ad-format="auto"></ins>
-<script>
-	(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<div>
-	<ul class="nav nav-tabs" role="tablist">
+<header>
+	<div class="dProfile">
+		<a href="https://sprite.asamaru.net"><img src="/res/img/icon/icon.png" width="50" height="50" alt="profile"></a>
+		<h1><a href="https://sprite.asamaru.net">Sprite CSS/Image Generator</a></h1>
+			</div>
+</header>
+<section class="dMainBody">
+<div class="main-box">
+	<section id="main-panel" class="clearfix">
+			<ul class="nav nav-tabs" role="tablist">
 		<li role="presentation" class="active"><a href="#cSetting" aria-controls="cSetting" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-cog"></i> Setting</a></li>
 		<li role="presentation"><a href="#cValidation" id="cValidationTab" aria-controls="cValidation" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-check"></i> Validation</a></li>
 		<li role="presentation"><a href="#cResult" id="cResultTab" aria-controls="cResult" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-print"></i> Generated CSS</a></li>
@@ -317,12 +338,12 @@
 					<div class="row">
 						<dl class="col-xs-6">
 							<dt>
-							<h3><span class="pNormalTitle"></span> [Normal]</h3></dt>
+								<h3><span class="pNormalTitle"></span> [Normal]</h3></dt>
 							<dd class="pNormal"></dd>
 						</dl>
 						<dl class="col-xs-6">
 							<dt>
-							<h3><span class="pRetinaTitle"></span> [Retina]</h3></dt>
+								<h3><span class="pRetinaTitle"></span> [Retina]</h3></dt>
 							<dd class="pRetina"></dd>
 						</dl>
 					</div>
@@ -335,63 +356,18 @@
 			<pre class="cExportData"></pre>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js" data-main="res/js/index.js"></script>
+	</section>
 </div>
 
-<!--
-<footer>
-	<a href="https://github.com/asamaru7/SpriteImageGenerator/zipball/master" class="btn btn-primary">
-		<small>Download</small>
-		.zip file
-	</a>
-	<a href="https://github.com/asamaru7/SpriteImageGenerator/tarball/master" class="btn btn-primary">
-		<small>Download</small>
-		.tar.gz file
-	</a>
-
-	<p class="repo-owner"><a href="https://github.com/asamaru7/SpriteImageGenerator"></a> is maintained by <a href="https://github.com/asamaru7">asamaru7</a>.</p>
-
-	<p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</p>
+</section>
+<footer class="bottom">
+	hosted by <a href="https://github.com/"><em>Github</em></a> / Posted by <a href="mailto:asamaru@asamaru.net"><em>Asamaru</em></a>
+	&nbsp;&nbsp;&nbsp;<a href="/policy/privacy/" target="_blank">Privacy Policy</a>
 </footer>
--->
 
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js" data-main="js/index.js"></script>
 
-<!-- https://www.shareaholic.com -->
-<script type="text/javascript">
-	//<![CDATA[
-	(function() {
-		var shr = document.createElement('script');
-		shr.setAttribute('data-cfasync', 'false');
-		shr.src = '//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js';
-		shr.type = 'text/javascript'; shr.async = 'true';
-		shr.onload = shr.onreadystatechange = function() {
-			var rs = this.readyState;
-			if (rs && rs != 'complete' && rs != 'loaded') return;
-			var site_id = '7e2eba662f961d2c553b48d545ce8268';
-			try { Shareaholic.init(site_id); } catch (e) {}
-		};
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(shr, s);
-	})();
-	//]]>
-</script>
-
-<script>
-	(function (i, s, o, g, r, a, m) {
-		i['GoogleAnalyticsObject'] = r;
-		i[r] = i[r] || function () {
-					(i[r].q = i[r].q || []).push(arguments)
-				}, i[r].l = 1 * new Date();
-		a = s.createElement(o),
-				m = s.getElementsByTagName(o)[0];
-		a.async = 1;
-		a.src = g;
-		m.parentNode.insertBefore(a, m)
-	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-	ga('create', 'UA-65749108-1', 'auto');
-	ga('send', 'pageview');
-
-</script>
+<script src="/res/js/min/660a60acce08585beb04d09e6a56c260.js" async="true" type="text/javascript"></script>
 </body>
 </html>
