@@ -2,3 +2,4 @@
 *.iml
 out
 gen
+/res/mix-manifest.json
