@@ -2,7 +2,7 @@
 
 Online Sprite Image Generator
 
-[http://sprite.asamaru.net/](http://sprite.asamaru.net/)
+[http://sprite.x28.xyz/](http://sprite.x28.xyz/)
 
 CSS sprites are a way to reduce the number of HTTP requests made for image resources referenced by your site. Images are combined into one larger image at defined X and Y coordinates. 
 
